@@ -1,7 +1,7 @@
 # 🚀 DriverPro – Open Source Driver Updater
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/EmirCGN/DriverPro/main/docs/banner.png" alt="DriverPro Banner" width="100%"/>
+  <img src="https://github.com/EmirCGN/DriverPro/blob/master/docs/banner.png" alt="DriverPro Banner" width="100%"/>
 </p>
 
 <p align="center">
