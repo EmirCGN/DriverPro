@@ -1,4 +1,4 @@
-# 🚀 DriverPro – Open Source Driver Updater
+<h1 align="center">🚀 DriverPro – Open Source Driver Updater</h1>
 
 <p align="center">
   <img src="https://github.com/EmirCGN/DriverPro/blob/master/docs/banner.png" alt="DriverPro Banner" width="100%"/>
@@ -47,6 +47,5 @@ Entwickelt in **C# / .NET Framework 4.7.2** mit einer **modernen Dark/Light UI**
 👉 Menschen hassen es, Zeit zu verschwenden – DriverPro spart dir diese Zeit.  
 👉 Menschen wollen Kontrolle – DriverPro zeigt dir transparent, was passiert.  
 👉 Menschen wollen Sicherheit – DriverPro verhindert instabile oder unsichere Treiber.  
-👉 Menschen mögen Design – DriverPro kombiniert Funktion mit moderner, klarer Optik.  
 
-**DriverPro macht dein System nicht nur aktueller, sondern gibt dir auch das Gefühl von Kontrolle, Sicherheit und Effizienz.**  
+**DriverPro ist nicht nur ein Projekt – es ist die Lösung für deine Probleme. Es gibt dir Kontrolle, Sicherheit und Effizienz, genau dann, wenn du sie brauchst.**  
