@@ -1,0 +1,166 @@
+﻿<!-- OpenDriverUpdater/Views/DashboardView.xaml  (Icons auf Lucide umgestellt) -->
+<UserControl x:Class="OpenDriverUpdater.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="24,18,24,24">
+
+            <!-- KPIs -->
+            <UniformGrid Columns="3" Margin="0,0,0,18">
+
+                <!-- System-Schutz -->
+                <Border Style="{StaticResource CardStyle}" Margin="0,0,18,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="System-Schutz" Foreground="{DynamicResource FgSub}" FontSize="12"/>
+                            <TextBlock Text="{Binding SystemProtection}" Foreground="#20D28F" FontWeight="Bold" FontSize="22" Margin="0,4,0,0"/>
+                        </StackPanel>
+                        <Border Grid.Column="1" Width="44" Height="44" CornerRadius="22" Background="#14303F"
+                    HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Path Data="{StaticResource Icon.Shield}" Style="{StaticResource IconPath}" Stroke="#20D28F"
+                    Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <!-- Performance -->
+                <Border Style="{StaticResource CardStyle}" Margin="0,0,18,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Performance" Foreground="{DynamicResource FgSub}" FontSize="12"/>
+                            <TextBlock>
+                <Run Text="{Binding PerformancePercent}"/><Run Text="%"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <Border Grid.Column="1" Width="44" Height="44" CornerRadius="22" Background="#14303F"
+                    HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Path Data="{StaticResource Icon.Zap}" Style="{StaticResource IconPath}" Stroke="{DynamicResource Blue1}"
+                    Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <!-- Letzte Prüfung -->
+                <Border Style="{StaticResource CardStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Letzte Prüfung" Foreground="{DynamicResource FgSub}" FontSize="12"/>
+                            <TextBlock Text="{Binding LastCheck}" FontWeight="Bold" FontSize="22" Margin="0,4,0,0"/>
+                        </StackPanel>
+                        <Border Grid.Column="1" Width="44" Height="44" CornerRadius="22" Background="#14303F"
+                    HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Path Data="{StaticResource Icon.Clock}" Style="{StaticResource IconPath}"
+                    Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </Grid>
+                </Border>
+            </UniformGrid>
+
+            <!-- Treiber-Übersicht -->
+            <Border Style="{StaticResource CardStyle}" Margin="0,0,0,18">
+                <StackPanel>
+                    <TextBlock Text="Treiber-Übersicht" FontWeight="SemiBold" FontSize="16" Margin="0,0,0,12"/>
+                    <UniformGrid Columns="4">
+
+                        <!-- Gesamt -->
+                        <Border Background="{DynamicResource CardSoft}" CornerRadius="12" Padding="16" Margin="0,0,18,0">
+                            <StackPanel>
+                                <Path Data="{StaticResource Icon.Activity}" Style="{StaticResource IconPath}"
+                      Stroke="{DynamicResource Blue1}" Width="24" Height="24" Margin="0,0,0,8"/>
+                                <TextBlock Text="{Binding TotalDrivers}" FontSize="24" FontWeight="Bold"/>
+                                <TextBlock Text="Gesamt" Foreground="{DynamicResource FgSub}" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Aktuell -->
+                        <Border Background="#112C25" CornerRadius="12" Padding="16" Margin="0,0,18,0">
+                            <StackPanel>
+                                <Path Data="{StaticResource Icon.CheckCircle}" Style="{StaticResource IconPath}"
+                      Stroke="#20D28F" Width="24" Height="24" Margin="0,0,0,8"/>
+                                <TextBlock Text="{Binding UpToDate}" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="Aktuell" Foreground="#CFEFE4" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Updates verfügbar -->
+                        <Border Background="#332519" CornerRadius="12" Padding="16" Margin="0,0,18,0">
+                            <StackPanel>
+                                <Path Data="{StaticResource Icon.AlertTriangle}" Style="{StaticResource IconPath}"
+                      Stroke="{DynamicResource Yellow}" Width="24" Height="24" Margin="0,0,0,8"/>
+                                <TextBlock Text="{Binding UpdatesAvailable}" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="Updates verfügbar" Foreground="#F5E1BE" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Wird aktualisiert -->
+                        <Border Background="#1A2741" CornerRadius="12" Padding="16">
+                            <StackPanel>
+                                <Path Data="{StaticResource Icon.Download}" Style="{StaticResource IconPath}"
+                      Stroke="{DynamicResource Blue1}" Width="24" Height="24" Margin="0,0,0,8"/>
+                                <TextBlock Text="{Binding Updating}" FontSize="24" FontWeight="Bold" Foreground="White"/>
+                                <TextBlock Text="Wird aktualisiert" Foreground="#C9DAF5" Margin="0,2,0,0"/>
+                            </StackPanel>
+                        </Border>
+
+                    </UniformGrid>
+                </StackPanel>
+            </Border>
+
+            <!-- Schnellaktionen -->
+            <Border Style="{StaticResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="Schnellaktionen" FontWeight="SemiBold" FontSize="16" Margin="0,0,0,12"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="18"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Vollständiger Scan -->
+                        <Button Grid.Column="0" Style="{StaticResource PrimaryAction}" Height="72" Command="{Binding FullScanCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="36" Height="36" CornerRadius="18" Background="#1B5B8A" Margin="0,0,12,0">
+                                    <Path Data="{StaticResource Icon.Shield}" Style="{StaticResource IconPath}" Stroke="White"
+                        Width="18" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel>
+                                    <TextBlock Text="Vollständiger Scan" FontSize="16" FontWeight="Bold"/>
+                                    <TextBlock Text="System auf veraltete Treiber prüfen" Opacity="0.9"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Alle Updates -->
+                        <Button Grid.Column="2" Style="{StaticResource SuccessAction}" Height="72" Command="{Binding InstallAllCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="36" Height="36" CornerRadius="18" Background="#137D5B" Margin="0,0,12,0">
+                                    <Path Data="{StaticResource Icon.Download}" Style="{StaticResource IconPath}" Stroke="White"
+                        Width="18" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel>
+                                    <TextBlock Text="Alle Updates" FontSize="16" FontWeight="Bold"/>
+                                    <TextBlock Text="Verfügbare Updates installieren" Opacity="0.9"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
