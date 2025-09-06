@@ -35,6 +35,6 @@ Das Projekt wurde als WPF-Client in **C# / .NET Framework 4.7.2** entwickelt und
 
 | Dashboard | Scan | Ergebnisse |
 |-----------|------|------------|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Scan](docs/screenshots/scan.png) | ![Results](docs/screenshots/results.png) |
+| ![Dashboard](docs/dashboard.png) | ![Scan](docs/scan.png) | ![Results](docs/results.png) |
 
 ---
